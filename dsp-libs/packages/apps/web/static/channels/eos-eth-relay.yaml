@@ -1,0 +1,8 @@
+processor: eos-eth-relay
+ethEndpoint: "http://localhost:8545"
+ethPrivateKey: "0x0a69d1ca80e26c52daf782c59328be754709cb34861ce147ab989fb13b630dbc"
+ethContractAddress: "0xd876B4cB88DBF3369f1B3a3cdD85cA008f4C8Af6"
+eosEndpoint: "http://localhost:8888"
+eosPrivateKey: "5KPr7rCvvU7HJ7zHJkqFZ89rLaMz5tffWiVYYMy3dXNpv4RT5a7"
+eosAccountName: "test"
+eosBridgeAccountName: "bridge"

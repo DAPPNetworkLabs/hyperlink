@@ -1,0 +1,43 @@
+{
+  "name": "@liquidapps/dsp-lib-framework",
+  "version": "2.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "link": "npm run build && cd dist && npm link"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@liquidapps/dsp-lib-base": "^2.0.0",
+    "@wasmer/wasi": "^0.12.0",
+    "@wasmer/wasm-transformer": "^0.12.0",
+    "@wasmer/wasmfs": "^0.12.0",
+    "buffer": "^5.7.0",
+    "cids": "^1.0.2",
+    "core-js": "^3.6.5",
+    "ipfs": "^0.51.0",
+    "it-pipe": "^1.1.0",
+    "js-yaml": "^3.14.0",
+    "libp2p": "^0.29.2",
+    "eosjs": "^20.0.0",
+    "libp2p-bootstrap": "^0.12.1",
+    "libp2p-gossipsub": "^0.6.4",
+    "libp2p-kad-dht": "^0.20.1",
+    "libp2p-mplex": "^0.10.1",
+    "libp2p-noise": "^2.0.1",
+    "libp2p-webrtc-star": "^0.20.1",
+    "libp2p-websockets": "^0.14.0",
+    "multiaddr": "^8.1.1",
+    "peer-id": "^0.14.2",
+    "protons": "^2.0.0",
+    "sha256": "^0.2.0",
+    "stream-to-string": "^1.2.0",
+    "strongly-typed-events": "^1.6.22",
+    "uint8arrays": "^1.1.0"
+  }
+}

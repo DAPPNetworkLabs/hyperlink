@@ -1,0 +1,6 @@
+c:
+  - static/meta/dev.yaml
+ui:
+  - /ipfs/Qmd3DjCSXA12VmpoeiSTcqmMQwwcPQtxtWSNz47eVsohg8
+p:
+  - static/channels/wasi.yaml

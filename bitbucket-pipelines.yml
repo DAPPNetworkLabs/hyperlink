@@ -1,0 +1,66 @@
+# This is a sample build configuration for Other.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+# image: node:10
+
+# AWS_SECRET_ACCESS_KEY: Secret key for a user with the required permissions.
+# AWS_ACCESS_KEY_ID: Access key for a user with the required permissions.
+
+# NPM_REGISTRY_URL: the full URL of your private registry
+#                   defaults to registry.npmjs.org.
+# NPM_TOKEN: secret token for installing private modules. This
+#            this token can be found in your .npmrc, after logging in.
+
+options:
+  max-time: 60
+  docker: true
+  size: 2x
+
+definitions:
+  services:
+    docker:
+      memory: 4096
+  caches:
+    main: node_modules
+    dsppackage: dsp-libs/node_modules
+    baselib: dsp-libs/packages/libs/base/node_modules
+    ethlib: dsp-libs/packages/libs/ethereum/node_modules
+    eoslib: dsp-libs/packages/libs/eosio/node_modules
+    frameworklib: dsp-libs/packages/libs/framework/node_modules
+    cryptolib: dsp-libs/packages/libs/crypto/node_modules
+    webapp: dsp-libs/packages/apps/web/node_modules
+    electronapp: dsp-libs/packages/apps/electron/node_modules
+    webcomponentsdev: dsp-libs/packages/apps/webcomponents/dev/node_modules
+pipelines:
+      default:
+          - step:
+              artifacts:
+                - ganache1.log
+                - ganache2.log
+                - edgedsp1.log
+                - edgedsp2.log
+                - nodeos.log
+              name: build and publish
+              max-time: 100
+              image: liquidapps/ci-builder:hyperlink
+              deployment: production
+              caches:
+                  - main
+                  - dsppackage
+                  - baselib
+                  - ethlib
+                  - eoslib
+                  - frameworklib
+                  - cryptolib
+                  - webapp
+                  - electronapp
+                  - webcomponentsdev
+              script:
+                  - source deployment/bitbucket.sh
+                  - projectdeps
+                  - build
+                  - unittests
+                  - systemtests
+                  - deploy

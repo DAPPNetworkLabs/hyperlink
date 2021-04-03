@@ -1,0 +1,5 @@
+---
+processor: pipeline
+processors:
+- processor: web-source
+

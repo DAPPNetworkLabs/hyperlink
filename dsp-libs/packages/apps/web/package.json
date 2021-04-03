@@ -1,0 +1,31 @@
+{
+	"name": "@liquidapps/dsp-app-web",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Tal Muskal <tmuskal@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@liquidapps/dsp-lib-base": "^2.0.0",
+		"@liquidapps/dsp-lib-crypto": "^2.0.0",
+		"@liquidapps/dsp-lib-eosio": "^2.0.0",
+		"@liquidapps/dsp-lib-ethereum": "^2.0.0",
+		"@liquidapps/dsp-lib-framework": "^2.0.0",
+		"core-js": "^3.6.5",
+		"ipfs": "^0.51.0",
+		"js-yaml": "^3.14.0",
+		"strongly-typed-events": "^1.6.22"
+	},
+	"scripts": {
+		"build": "webpack && rm -rf dist/static && cp -a static dist/static"
+	},
+	"devDependencies": {
+		"@types/core-js": "^0.9.41",
+		"core-js": "^3.6.5",
+		"html-webpack-plugin": "^4.5.0",
+		"source-map-loader": "^1.1.1",
+		"ts-loader": "^8.0.5",
+		"typescript": "^4.0.5",
+		"webpack": "^4.44.1",
+		"webpack-cli": "^4.0.0"
+	}
+}

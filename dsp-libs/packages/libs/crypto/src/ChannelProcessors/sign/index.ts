@@ -1,0 +1,2 @@
+import './ECDSASignChannelProcessor'
+import './EdDSASignChannelProcessor'

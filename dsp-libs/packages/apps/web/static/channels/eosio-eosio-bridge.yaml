@@ -1,0 +1,75 @@
+---
+processor: pipeline
+processors:
+- processor: cron-source
+  interval: 5
+- processor: eosio-table-source
+  table: pub.events
+  scope: testcontracta
+  code: testcontracta
+  endpoint: "http://127.0.0.1:8888"
+- processor: json-map
+  path: rows
+- processor: json-array-unwrap
+  idKey: nonce
+- processor: json-map
+  path: eventData
+- processor: fc-to-json
+  abi: 
+    structs:
+      - name: "eventdata"
+        base: ""
+        fields: 
+          - name: "success"
+            type: "bool"
+          - name: "from"
+            type: "name"            
+          - name: "to"
+            type: "name"
+          - name: "value"
+            type: "uint64"
+- processor: json-transform
+  transformView:
+    from:
+      processor: const
+      const: useraaaaaaae
+    to:
+      processor: json-map
+      path: to      
+    value:
+      processor: json-map
+      path: value
+- processor: json-transform
+  transformView:
+    data:
+        processor: identity
+    authorization:
+        processor: const
+        const: 
+          - actor: useraaaaaaae
+            permission: active
+    account:    
+        processor: const
+        const: testcontractb
+    name: 
+        processor: const
+        const: transfer
+- processor: json-transform
+  transformView:
+    actions:
+        processor: identity
+        array: true
+- processor: eosio-push
+  endpoint: "http://192.168.1.31:8888"
+  blocksBehind: 3
+  expireSeconds: 30
+  broadcast: false
+- processor: json-transform
+  transformView:
+    signatures:
+        processor: json-map
+        path: signatures
+    serializedTransaction:
+        processor: json-map
+        path: serializedTransaction
+

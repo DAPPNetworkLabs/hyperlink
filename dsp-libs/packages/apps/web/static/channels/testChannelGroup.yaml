@@ -1,0 +1,8 @@
+---
+processor: pipeline
+processors:
+- processor: cron-source
+---
+processor: pipeline
+processors:
+- processor: cron-source

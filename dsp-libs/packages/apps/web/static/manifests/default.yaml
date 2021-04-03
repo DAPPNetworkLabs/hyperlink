@@ -1,0 +1,7 @@
+c:
+  - static/meta/default.yaml
+ui:
+  - static/ui/default.html
+p:
+  - static/channels/default.yaml
+  - static/channels/libp2p-pubsub.yaml  

@@ -1,0 +1,7 @@
+c:
+  - static/meta/dev.yaml
+ui:
+  - /ipns/dev-ui.liquidapps.io
+p:
+  - static/channels/dev.yaml
+  - static/channels/libp2p-pubsub.yaml

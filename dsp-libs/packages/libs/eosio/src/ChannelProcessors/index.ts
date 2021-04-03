@@ -1,0 +1,6 @@
+import './EOSIORelayChannelProcessor'
+import './EOSIOTransactionPusherProcessor'
+import './EOSIOTableChannelProcessor'
+import './EOSIOSignerProcessor'
+import './FCToJSONProcessor'
+import './JSONToFCProcessor'

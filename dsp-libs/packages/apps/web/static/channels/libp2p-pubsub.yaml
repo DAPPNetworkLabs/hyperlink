@@ -1,0 +1,12 @@
+---
+processor: pipeline
+processors:
+- processor: libp2p-pubsub-source
+  fromTopic: '/dsp-testprotocol/1.0.0'
+---
+processor: pipeline
+processors:
+- processor: cron-source
+  interval: 60
+- processor: libp2p-pubsub-source
+  toTopic: '/dsp-testprotocol/1.0.0'

@@ -1,0 +1,6 @@
+c:
+  - static/meta/user.yaml
+ui:
+  - static/ui/user.html
+p:
+  - static/channels/user.yaml

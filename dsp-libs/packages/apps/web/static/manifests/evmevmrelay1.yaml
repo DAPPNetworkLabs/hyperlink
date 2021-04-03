@@ -1,0 +1,6 @@
+c:
+  - static/meta/dev.yaml
+ui:
+  - /ipns/dev-ui.liquidapps.io
+p:
+  - static/channels/evm-evm-relay1.yaml

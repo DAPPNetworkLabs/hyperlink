@@ -1,0 +1,33 @@
+---
+processor: pipeline
+processors:
+- processor: cron-source
+  interval: 60
+- processor: json-transform
+  transformView:
+    btcusd:
+        processor: pipeline
+        processors:
+        - processor: web-source
+          url: "https://api.coindesk.com/v1/bpi/currentprice.json"
+        - processor: string-to-json
+        - processor: json-map
+          path: bpi.USD.rate
+- processor: json-transform
+  transformView:
+    btcusd:
+        processor: json-map
+        path: btcusd
+    signature:
+        processor: pipeline
+        processors:
+        - processor: json-map
+          path: btcusd
+        - processor: encode-decode
+          inputEncoding: utf8
+          outputEncoding: hex
+        - processor: sha256
+          path: btcusd
+        - processor: encode-decode
+          inputEncoding: hex
+          outputEncoding: base64

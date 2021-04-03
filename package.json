@@ -1,0 +1,33 @@
+{
+    "name": "hyperlink",
+    "version": "1.0.0",
+    "description": "Hyperlink by LiquidApps. A blockchain enabled pub/sub service.",
+    "main": "index.js",
+    "scripts": {
+        "test": "eoslime test",
+        "compile": "bash scripts/compile.sh",
+        "compileEth": "cd contracts/eth && truffle compile && cd ../..",
+        "start": "bash scripts/start.sh",
+        "lint": "npx prettier --write 'contracts/eth/contracts/**/*.sol'"
+    },
+    "devDependencies": {
+        "mocha": "^6.2.0",
+        "prettier": "^2.2.1",
+        "prettier-plugin-solidity": "^1.0.0-beta.5"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@openzeppelin/contracts": "^3.3.0",
+        "base-58": "0.0.1",
+        "child_process": "^1.0.2",
+        "electron": "^11.2.3",
+        "eosjs": "^21.0.3",
+        "eoslime": "^2.0.0",
+        "fs": "0.0.1-security",
+        "path": "^0.12.7",
+        "truffle": "^5.1.55",
+        "truffle-contract": "^4.0.31",
+        "web3": "^1.3.0"
+    }
+}

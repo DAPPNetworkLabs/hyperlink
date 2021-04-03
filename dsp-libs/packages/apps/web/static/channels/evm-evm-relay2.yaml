@@ -1,0 +1,7 @@
+processor: evm-evm-relay
+evm1Endpoint: "http://localhost:8545"
+evm2Endpoint: "http://localhost:9545"
+evm1PrivateKey: "0xd06197723d79371d8b9e60c89ef16b8efe89b819adb623c4d9233027a7c6c599"
+evm2PrivateKey: "0xd06197723d79371d8b9e60c89ef16b8efe89b819adb623c4d9233027a7c6c599"
+evm1ContractAddress: "0x9FcD6107c9122503D02298d81A74C5F416DfBA39"
+evm2ContractAddress: "0xd876B4cB88DBF3369f1B3a3cdD85cA008f4C8Af6"
